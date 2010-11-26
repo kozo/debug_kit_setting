@@ -9,15 +9,15 @@ if (typeof(jQuery) != 'function' && typeof(jQuery) != 'object') {
 (function($) {
   $(function(){
     var $debug_kit_setting_cake_env = $('#debug_kit_setting_cake_env_define, #debug_kit_setting_cake_env_servers'),
-        $debug_kit_setting_expandable = $('.expandable', $debug_kit_setting_cake_env);
+        $debug_kit_setting_expandable = $('ul.neat-array.depth-0', $debug_kit_setting_cake_env).children('li');
     $debug_kit_setting_expandable.each(function(){
       var $this = $(this),
           $title = $('strong:first', $this);
 
       $this.click(function(){
         if ( $this.hasClass('expanded') === false ) {
-          var $lines = $('ul.neat-array.depth-1 li', $this);
-          $('<input type="text" name="jquery.search" value="" style="margin: 5px;" />').appendTo($title).click(function(){return false;}).search({
+          var $lines = $('ul.neat-array.depth-1', $this).children('li');
+          $('<input type="text" name="jquery.search" value="" style="width: 150px; display: inline; margin: 5px; padding: 2px;" />').appendTo($title).click(function(){return false;}).search({
             lines: $lines
           });
           $lines.click(function(){return false;});
