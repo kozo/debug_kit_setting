@@ -120,10 +120,20 @@ class SettingPanel extends DebugPanel {
         $dbConfigInfo = array();
         $dbConfig = new DATABASE_CONFIG();
         
+        if (empty($this->controller->modelNames)) {
+          return $dbConfigInfo;
+        }
+        
         // 読み込まれているModel分ループ
         foreach($this->controller->modelNames as $key=>$val)
         {
             APP::import('Model', $this->controller->modelNames[$key]);
+            
+            if (!class_exists($this->controller->modelNames[$key])) {
+                // 定義されてない
+                continue;
+            }
+            
             $model = new $this->controller->modelNames[$key];
             $useDbConfig = $model->useDbConfig;
             
