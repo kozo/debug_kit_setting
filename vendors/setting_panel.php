@@ -117,6 +117,9 @@ class SettingPanel extends DebugPanel {
      * @author sakuragawa
      */
     private function _getDbConnectInfo(){
+        if(!class_exists('DATABASE_CONFIG')){
+            return ;
+        }
         $dbConfigInfo = array();
         $dbConfig = new DATABASE_CONFIG();
         
