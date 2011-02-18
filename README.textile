@@ -1,0 +1,14 @@
+h2. Usage 
+
+h3. with DebugKit
+
+First, put `debug_kit_setting' directory on app/plugins in your CakePHP application.
+Second, add the following code in app_controller.php.
+
+<pre>
+<?php
+class AppController extends Controller {
+    var $components = array('DebugKit.Toolbar' => array('panels' => array('DebugKitSetting.setting')));
+}
+?>
+</pre>
