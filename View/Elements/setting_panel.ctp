@@ -1,10 +1,10 @@
 <script type="text/javascript" charset="utf-8">
 if (typeof(jQuery) != 'function' && typeof(jQuery) != 'object') {
-  document.write('<sc'+'ript src="<?php echo $html->url('/debug_kit_setting/js/jquery-1.3.2.min.js'); ?>" type="text/javascript"></sc'+'ript>');
+  document.write('<sc'+'ript src="<?php echo $this->Html->url('/debug_kit_setting/js/jquery-1.3.2.min.js'); ?>" type="text/javascript"></sc'+'ript>');
 }
 </script>
-<script src="<?php echo $html->url('/debug_kit_setting/js/jquery.keyinterval.js'); ?>" type="text/javascript"></script>
-<script src="<?php echo $html->url('/debug_kit_setting/js/jquery.search.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo $this->Html->url('/debug_kit_setting/js/jquery.keyinterval.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo $this->Html->url('/debug_kit_setting/js/jquery.search.js'); ?>" type="text/javascript"></script>
 <script type="text/javascript" charset="utf-8">
 (function($) {
   $(function(){
@@ -35,26 +35,26 @@ if (typeof(jQuery) != 'function' && typeof(jQuery) != 'object') {
 <?php if(!empty($cakeEnvMode)): ?>
 <div class="debug-info">
 <h2>Cake Env Mode</h2>
-  <?php echo $toolbar->makeNeatArray($cakeEnvMode); ?>
+  <?php echo $this->Toolbar->makeNeatArray($cakeEnvMode); ?>
 </div>
 <?php endif; ?>
 
 <div class="debug-info" id="debug_kit_setting_cake_env_define">
 <h2>Defines</h2>
-  <?php echo $toolbar->makeNeatArray($defines); ?>
+  <?php echo $this->Toolbar->makeNeatArray($defines); ?>
 </div>
 
 <div class="debug-info" id="debug_kit_setting_cake_env_servers">
 <h2>Servers</h2>
-  <?php echo $toolbar->makeNeatArray($servers); ?>
+  <?php echo $this->Toolbar->makeNeatArray($servers); ?>
 </div>
 
 <div class="debug-info">
 <h2>Extensions</h2>
-  <?php echo $toolbar->makeNeatArray($extensions); ?>
+  <?php echo $this->Toolbar->makeNeatArray($extensions); ?>
 </div>
 
 <div class="debug-info">
 <h2>Database</h2>
-  <?php echo $toolbar->makeNeatArray($dbConfigs); ?>
+  <?php echo $this->Toolbar->makeNeatArray($dbConfigs); ?>
 </div>
