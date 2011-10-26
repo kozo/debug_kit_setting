@@ -8,7 +8,7 @@ Second, add the following code in app_controller.php.
 <pre>
 <?php
 class AppController extends Controller {
-    var $components = array('DebugKit.Toolbar' => array('panels' => array('DebugKitSetting.setting')));
+    public $components = array('DebugKit.Toolbar' => array('panels' => array('DebugKitSetting.Setting')));
 }
 ?>
 </pre>
